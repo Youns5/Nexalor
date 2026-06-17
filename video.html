@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexalor - Video</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="sub-timer.css" />
+</head>
+<body data-page="video">
+  <div id="loader" class="loader-overlay">
+    <div class="loader"></div>
+    <p>Lecture Nexalor...</p>
+  </div>
+
+  <header class="topbar">
+    <div class="topbar-left">
+      <button class="icon-btn burger-btn" id="burgerBtn" aria-label="Ouvrir le menu">☰</button>
+      <a class="logo" href="index.html">NEXALOR</a>
+    </div>
+    <div class="search-wrap">
+      <input id="searchInput" type="search" placeholder="Rechercher une video..." />
+    </div>
+    <div class="topbar-right"></div>
+  </header>
+
+  <div class="layout video-layout">
+    <aside class="sidebar" id="sidebar">
+      <nav>
+        <a class="side-link" href="index.html">Accueil</a>
+        <a class="side-link" href="tendances.html">Tendances</a>
+        <a class="side-link" href="abonnements.html">Abonnements</a>
+        <a class="side-link" href="categories.html">Categories</a>
+        <a class="side-link" href="historique.html">Historique</a>
+      </nav>
+    </aside>
+
+    <main class="content player-page">
+      <section class="player-column" id="playerColumn"></section>
+      <aside class="recommendations" id="recommendations"></aside>
+    </main>
+  </div>
+
+  <footer class="site-footer">BY YOUNSOUGLUOU</footer>
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+

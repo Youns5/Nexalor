@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexalor - Inscription / Connexion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .auth-container {
+      max-width: 400px;
+      margin: 80px auto;
+      background: var(--bg-card);
+      border-radius: 24px;
+      padding: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+    }
+    .auth-tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+    .auth-tab {
+      flex: 1;
+      padding: 12px;
+      text-align: center;
+      cursor: pointer;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.03);
+      transition: background 0.2s;
+      font-weight: 600;
+    }
+    .auth-tab.active {
+      background: var(--primary);
+      color: white;
+    }
+    .auth-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .form-group label {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+    }
+    .form-group input {
+      padding: 12px 15px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      color: white;
+      font-family: inherit;
+    }
+    .auth-btn {
+      padding: 15px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .auth-btn:hover {
+      background: var(--primary-2);
+    }
+    .auth-error {
+      color: #ff8fa2;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body data-page="auth">
+  <div class="auth-container">
+    <div style="text-align:center; margin-bottom: 30px;">
+      <a class="logo" href="index.html">NEXALOR</a>
+    </div>
+    
+    <div class="auth-tabs">
+      <div id="tabLogin" class="auth-tab active">Connexion</div>
+      <div id="tabRegister" class="auth-tab">Inscription</div>
+    </div>
+
+    <form id="authForm" class="auth-form">
+      <div class="form-group">
+        <label>Nom d'utilisateur</label>
+        <input type="text" id="username" placeholder="Pseudo" required />
+      </div>
+      <div class="form-group">
+        <label>Mot de passe</label>
+        <input type="password" id="password" placeholder="••••••••" required />
+      </div>
+      <p id="authError" class="auth-error hidden"></p>
+      <button type="submit" id="authBtn" class="auth-btn">Se connecter</button>
+    </form>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

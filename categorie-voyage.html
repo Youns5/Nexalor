@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexalor - Categorie Voyage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="category" data-category="Voyage">
+  <div id="loader" class="loader-overlay"><div class="loader"></div><p>Chargement categorie...</p></div>
+  <header class="topbar">
+    <div class="topbar-left"><button class="icon-btn burger-btn" id="burgerBtn" aria-label="Ouvrir le menu">☰</button><a class="logo" href="index.html">NEXALOR</a></div>
+    <div class="search-wrap"><input id="searchInput" type="search" placeholder="Rechercher dans la categorie..." /></div>
+    <div class="topbar-right"></div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <nav>
+        <a class="side-link" href="index.html">Accueil</a>
+        <a class="side-link" href="tendances.html">Tendances</a>
+        <a class="side-link" href="abonnements.html">Abonnements</a>
+        <a class="side-link active" href="categories.html">Categories</a>
+        <a class="side-link" href="historique.html">Historique</a>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <h1 class="section-title" id="categoryPageTitle">Categorie</h1>
+      <section class="videos-grid" id="videosGrid"></section>
+      <p id="emptyState" class="empty-state hidden">Aucune video dans cette categorie.</p>
+    </main>
+  </div>
+
+  <footer class="site-footer">BY YOUNSOUGLUOU</footer>
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+

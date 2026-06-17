@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexalor - Abonnements</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="sub-timer.css" />
+</head>
+<body data-page="subscriptions">
+  <div id="loader" class="loader-overlay"><div class="loader"></div><p>Chargement abonnements...</p></div>
+  <header class="topbar">
+    <div class="topbar-left"><button class="icon-btn burger-btn" id="burgerBtn" aria-label="Ouvrir le menu">☰</button><a class="logo" href="index.html">NEXALOR</a></div>
+    <div class="search-wrap"><input id="searchInput" type="search" placeholder="Rechercher une video..." /></div>
+    <div class="topbar-right"></div>
+  </header>
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <nav>
+        <a class="side-link" href="index.html">Accueil</a>
+        <a class="side-link" href="tendances.html">Tendances</a>
+        <a class="side-link active" href="abonnements.html">Abonnements</a>
+        <a class="side-link" href="categories.html">Categories</a>
+        <a class="side-link" href="historique.html">Historique</a>
+      </nav>
+    </aside>
+    <main class="content">
+      <section class="pricing-container">
+        <h1 class="section-title">Nos Abonnements Premium</h1>
+        <p class="section-subtitle">Accédez à des vidéos exclusives, une qualité 4K et aucun publicité.</p>
+        
+        <div class="pricing-grid">
+          <!-- Carte Jour -->
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <h2>Journée</h2>
+              <div class="price">1€<span>/24h</span></div>
+            </div>
+            <ul class="pricing-features">
+              <li>✓ Accès Vidéos Premium</li>
+              <li>✓ Qualité HD+</li>
+              <li>✓ Sans publicités</li>
+              <li>✓ Support prioritaire</li>
+            </ul>
+            <button class="btn pricing-btn">S'abonner</button>
+          </div>
+
+          <!-- Carte Semaine -->
+          <div class="pricing-card featured">
+            <div class="featured-badge">Populaire</div>
+            <div class="pricing-header">
+              <h2>Semaine</h2>
+              <div class="price">5€<span>/7j</span></div>
+            </div>
+            <ul class="pricing-features">
+              <li>✓ Accès Vidéos Premium</li>
+              <li>✓ Qualité 4K Ultra</li>
+              <li>✓ Mode hors ligne</li>
+              <li>✓ Sans publicités</li>
+              <li>✓ Support 24/7</li>
+            </ul>
+            <button class="btn pricing-btn">S'abonner</button>
+          </div>
+
+          <!-- Carte Mois -->
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <h2>Mois</h2>
+              <div class="price">20€<span>/mois</span></div>
+            </div>
+            <ul class="pricing-features">
+              <li>✓ Accès TOTAL Premium</li>
+              <li>✓ Qualité 4K + HDR</li>
+              <li>✓ 4 écrans simultanés</li>
+              <li>✓ Sans publicités</li>
+              <li>✓ Contenus en avant-première</li>
+            </ul>
+            <button class="btn pricing-btn">S'abonner</button>
+          </div>
+        </div>
+      </section>
+
+      <div class="separator"></div>
+
+      <h1 class="section-title">Mes Favoris</h1>
+      <section class="videos-grid" id="videosGrid"></section>
+      <p id="emptyState" class="empty-state hidden">Aucune video dans tes abonnements.</p>
+    </main>
+  </div>
+  <footer class="site-footer">BY YOUNSOUGLUOU</footer>
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexalor - Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="admin-pro">
+  <div id="loader" class="loader-overlay">
+    <div class="loader"></div>
+    <p>Panel Admin Nexalor...</p>
+  </div>
+
+  <header class="topbar">
+    <div class="topbar-left">
+      <a class="logo" href="index.html">NEXALOR</a>
+    </div>
+    <div class="search-wrap compact">
+      <a class="btn" href="index.html">Retour accueil</a>
+    </div>
+    <div class="topbar-right">
+      <button class="btn danger hidden" id="logoutBtn">Deconnexion</button>
+    </div>
+  </header>
+
+  <main class="admin-page">
+    <section class="admin-login card" id="adminLogin">
+      <h1>Connexion Admin</h1>
+      <p>Acces restreint: saisir le mot de passe securise.</p>
+      <form id="loginForm">
+        <input type="text" id="adminUsername" placeholder="Identifiant admin" required />
+        <input type="password" id="adminPassword" placeholder="Mot de passe admin" required />
+        <button type="submit" class="btn">Se connecter</button>
+      </form>
+      <p id="loginError" class="error-msg hidden">Identifiants incorrects.</p>
+    </section>
+
+    <section class="admin-panel hidden" id="adminPanel">
+      <div class="card admin-grid-head">
+        <div>
+          <h2>Panel Admin Complet</h2>
+          <p class="meta">Tu peux gerer videos, categories, theme et identite du site.</p>
+        </div>
+        <div id="adminStats" class="admin-stats"></div>
+      </div>
+
+      <div class="card">
+        <h2>Publier une video</h2>
+        <form id="publishForm" class="admin-form">
+          <input id="titleInput" type="text" placeholder="Titre de la video" required />
+          <textarea id="descriptionInput" placeholder="Description" rows="4" required></textarea>
+          <select id="categorySelect" required></select>
+          <input id="videoUrlInput" type="url" placeholder="URL video (ou televersement)" />
+          <input id="videoFileInput" type="file" accept="video/mp4,video/webm" />
+          <input id="thumbnailInput" type="url" placeholder="URL miniature (ou televersement)" />
+          <input id="thumbnailFileInput" type="file" accept="image/png,image/jpeg,image/webp" />
+          <button type="submit" class="btn">Publier</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <h2>Modifier une video</h2>
+        <form id="editForm" class="admin-form hidden">
+          <input id="editId" type="text" readonly />
+          <input id="editTitle" type="text" placeholder="Titre" required />
+          <textarea id="editDescription" rows="4" placeholder="Description" required></textarea>
+          <select id="editCategory" required></select>
+          <input id="editVideoUrl" type="url" placeholder="URL video" required />
+          <input id="editThumbnail" type="url" placeholder="URL miniature" required />
+          <button type="submit" class="btn">Enregistrer les modifications</button>
+          <button type="button" class="btn danger" id="cancelEditBtn">Annuler</button>
+        </form>
+        <p id="editHint" class="meta">Clique sur "Modifier" dans la liste des videos.</p>
+      </div>
+
+      <div class="card">
+        <h2>Gerer les categories</h2>
+        <form id="categoryForm" class="admin-form">
+          <input id="newCategoryInput" type="text" placeholder="Nouvelle categorie" required />
+          <button type="submit" class="btn">Ajouter categorie</button>
+        </form>
+        <div id="categoriesAdminList" class="admin-videos"></div>
+      </div>
+
+      <div class="card">
+        <h2>Theme et identite du site</h2>
+        <form id="themeForm" class="admin-form">
+          <select id="presetSelect">
+            <option value="violet">Violet Classique</option>
+            <option value="crimson">Crimson Night</option>
+            <option value="ocean">Ocean Pulse</option>
+            <option value="emerald">Emerald Stream</option>
+          </select>
+          <input id="logoTextInput" type="text" placeholder="Texte logo (ex: NEXALOR)" />
+          <input id="footerTextInput" type="text" placeholder="Texte footer" />
+          <label>Couleur principale</label>
+          <input id="colorPrimary" type="color" value="#6a0dad" />
+          <label>Couleur secondaire</label>
+          <input id="colorSecondary" type="color" value="#a34dff" />
+          <label>Fond principal</label>
+          <input id="colorBgMain" type="color" value="#08070d" />
+          <label>Fond secondaire</label>
+          <input id="colorBgSoft" type="color" value="#11101a" />
+          <button type="submit" class="btn">Sauvegarder le theme global</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <h2>Videos publiees</h2>
+        <div id="adminVideosList" class="admin-videos"></div>
+      </div>
+
+      <p id="adminStatus" class="meta"></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">BY YOUNSOUGLUOU</footer>
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+  <script src="admin-panel.js"></script>
+</body>
+</html>
+
+
+

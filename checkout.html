@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexalor - Paiement Sécurisé</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .checkout-container {
+      max-width: 500px;
+      margin: 60px auto;
+      background: var(--bg-card);
+      border-radius: 24px;
+      padding: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+    }
+    .checkout-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .checkout-header h1 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+    .plan-summary {
+      background: rgba(106, 13, 173, 0.15);
+      border: 1px dashed var(--primary);
+      border-radius: 12px;
+      padding: 15px;
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .plan-summary .plan-info span {
+      display: block;
+      color: var(--text-soft);
+      font-size: 0.9rem;
+    }
+    .plan-summary .plan-price {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary-2);
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+      color: var(--text-soft);
+    }
+    .form-group input {
+      width: 100%;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 12px 15px;
+      border-radius: 8px;
+      color: white;
+      font-family: inherit;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+    .payment-btn {
+      width: 100%;
+      padding: 16px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background 0.2s;
+    }
+    .payment-btn:hover {
+      background: var(--primary-2);
+    }
+    .secure-badge {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+    }
+  </style>
+</head>
+<body data-page="checkout">
+  <div class="checkout-container">
+    <div class="checkout-header">
+      <a class="logo" href="index.html" style="margin-bottom: 20px; display: inline-block;">NEXALOR</a>
+      <h1>Finaliser votre abonnement</h1>
+      <p style="color: var(--text-soft)">Paiement 100% sécurisé</p>
+    </div>
+
+    <div class="plan-summary" id="planSummary">
+      <div class="plan-info">
+        <strong id="planName">Chargement...</strong>
+        <span id="planDesc">Nexalor Premium</span>
+      </div>
+      <div class="plan-price" id="planPrice">--€</div>
+    </div>
+
+    <form id="paymentForm">
+      <div class="form-group">
+        <label>Nom sur la carte</label>
+        <input type="text" placeholder="Jean Dupont" required />
+      </div>
+      <div class="form-group">
+        <label>Numéro de carte</label>
+        <input type="text" placeholder="0000 0000 0000 0000" maxlength="19" required />
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Date d'expiration</label>
+          <input type="text" placeholder="MM / YY" maxlength="5" required />
+        </div>
+        <div class="form-group">
+          <label>CVC</label>
+          <input type="text" placeholder="123" maxlength="3" required />
+        </div>
+      </div>
+      <button type="submit" class="payment-btn" id="payBtn">Payer et activer Premium</button>
+    </form>
+
+    <div class="secure-badge">
+      🔒 Paiement crypté SSL par Nexalor Secure
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
